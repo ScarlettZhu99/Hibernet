@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+<class name="com.nagendra.com.hibernate.Task3.Emp" table="employee">
+<id name="id" column="eid"></id>
+<property name="name" column="ename"></property>
+<map name="phoneno" cascade="all">
+<key column="id"></key>
+<index column="MapKey" type="string"></index>
+<one-to-many class="com.nagendra.com.hibernate.Task3.PhoneNumber"/>
+</map>
+</class>
+<class name="com.nagendra.com.hibernate.Task3.PhoneNumber" table="phone">
+<id name="pid" column="phone_id"></id>
+<property name="network" column="phone_network"></property>
+<property name="phonenumber" column="p_phonenumber"></property>
+</class>
+</hibernate-mapping>
+
+
+  
+
+
+
